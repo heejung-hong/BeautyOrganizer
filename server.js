@@ -13,7 +13,7 @@ const db = require('./models');
 
 /* 1.7.3 Require the routes in the controllers folder
 --------------------------------------------------------------- */
-// const beautiesCtrl = require('./controllers/beauties')
+const beautiesCtrl = require('./controllers/beauties')
 
 /* 1.5.1 Create the Express app
 --------------------------------------------------------------- */
@@ -43,7 +43,7 @@ app.use(express.static('public'))
 app.use(connectLiveReload());
 
 
-/* 1.5.1 Mount routes
+/* 1.5.1 Mount routes looks into beauties controller
 --------------------------------------------------------------- */
 app.get('/', function (req, res) {
     res.send('Project-2')
@@ -67,7 +67,7 @@ app.get('/seed', function (req, res) {
 
 // 1.7.4 This tells our app to look at the `controllers/pets.js` file 
 // 1.7.4 to handle all routes that begin with `localhost:3000/pets`
-// app.use('/beauties', beautiesCtrl)
+app.use('/beauties', beautiesCtrl)  // this is middleware that stores extra routes in beauties controller
 
 
 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: 'Beauty Organizer'}) %>
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <main>
+        <section class="hero">
+            <h2>Organize Your Beauty Stash</h2>
+            <a href="/beauties" class="btn">Add Now!</a>
+        </section>
+
+        <section class="about">
+            <h2>About Beauty Organizer</h2>
+            <p>
+                This is an app to help organize your beauty products.
+                <br>
+                Once you have created your inventory, you no longer need to rummage around your stash to see what products you have.
+                <br>
+                When it is time to reorder, no need to make a list on paper, you can have this list next to you while you place your order.
+                <br>
+                You won't rebuyy what products you have tried and disliked because your ratings and comments will be available.
+            </p>
+            <a href="/about" class="btn">Learn More</a>
+        </section>
+
+        
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>
