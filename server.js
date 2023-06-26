@@ -42,6 +42,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'))
 app.use(connectLiveReload());
 
+// 2.2.1 Body parser: used for POST/PUT/PATCH routes: 
+// 2.2.1 this will take incoming strings from the body that are URL encoded and parse them 
+// 2.2.1 into an object that can be accessed in the request parameter as a property called body (req.body).
+app.use(express.urlencoded({ extended: true }));
+
+
 
 /* 1.5.1 Mount routes looks into beauties controller
 --------------------------------------------------------------- */
@@ -64,11 +70,22 @@ app.get('/seed', function (req, res) {
         })
 });
 
+// 2.3.6 Non-REST: renders about page
+app.get('/about', function (req, res) {
+    res.send('You\'ve hit the about route')
+});
+
+
 
 // 1.7.4 This tells our app to look at the `controllers/pets.js` file 
 // 1.7.4 to handle all routes that begin with `localhost:3000/pets`
 app.use('/beauties', beautiesCtrl)  // this is middleware that stores extra routes in beauties controller
 
+
+// 2.3.7 The "catch-all" route: Runs for any other URL that doesn't match the above routes
+app.get('*', function (req, res) {  // * is catch all route
+    res.send('404 Error: Page Not Found')
+});
 
 
 /* 1.5.1 Tell the app to listen on the specified port
