@@ -1,11 +1,14 @@
-div {
+.card,
+.applications {
     max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+    margin: 2rem auto;
     border: 1px solid #ccc;
-    padding: 20px;
-    margin: 4vh auto;
     box-shadow: 2px 2px 5px #ccc;
+}
+
+.card {
+    text-align: center;
+    padding: 20px;
 }
 
 img {
@@ -50,4 +53,46 @@ strong {
 
 .btn a {
     color: #fff;
+}
+
+/* Adoption applications */
+.applications {
+    padding: 30px;
+    height: fit-content;
+    max-height: 50vh;
+    overflow-y: overlay;
+    width: 100%;
+}
+
+.applications h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+hr {
+    margin-bottom: 1rem;
+}
+
+.applications ul {
+    list-style: none;
+}
+
+.applications li {
+    background-color: #ccc;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.applications a {
+    position: absolute;
+    top: 1.6rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
 }

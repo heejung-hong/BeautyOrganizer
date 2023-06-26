@@ -17,6 +17,9 @@ main {
 .listings ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .listings li {
@@ -26,6 +29,7 @@ main {
     border-radius: 4px;
     position: relative;
     text-align: center;
+    min-width: 550px;
 }
 
 .listings li img {
