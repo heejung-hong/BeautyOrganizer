@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head.ejs', {title: 'Furever Friends'}) %>
-    <link rel="stylesheet" href="/styles/pet-index.css">
+    <%- include('../partials/head.ejs', {title: 'Beauty Organizer'}) %>
+    <link rel="stylesheet" href="/styles/beauty-index.css">
 </head>
 
 <body>
@@ -17,14 +17,14 @@
     <main>
         <section class="listings">
             <ul>
-                <% for (let pet of pets) { %>
+                <% for (let beauty of beauties) { %>
                 <li>
                     <figure>
-                        <img src="<%= pet.photo %>">
+                        <img src="<%= beauty.photo %>">
                         <figcaption>
-                            <h4><%= pet.name %></h4>
-                            <p><%= pet.breed %>, <%= pet.age %> year(s) old, <%= pet.state %></p>
-                            <a href="/pets/<%= pet._id %>">Learn More</a>
+                            <h4><%= beauty.name %></h4>
+                            <p><%= beauty.brandName %>, Qty <%= beauty.qty %>, <%= beauty.rating %> Stars</p>
+                            <a href="/beauties/<%= beauty._id %>">Details</a>
                         </figcaption>
                     </figure>
                 </li>

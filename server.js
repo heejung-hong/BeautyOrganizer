@@ -14,6 +14,8 @@ const db = require('./models');
 /* 1.7.3 Require the routes in the controllers folder
 --------------------------------------------------------------- */
 const beautiesCtrl = require('./controllers/beauties')
+// 3.3.3 connect the reviews controllers to server.js
+const reviewsCtrl = require('./controllers/reviews')
 
 /* 1.5.1 Create the Express app
 --------------------------------------------------------------- */
@@ -77,9 +79,13 @@ app.get('/about', function (req, res) {
 
 
 
-// 1.7.4 This tells our app to look at the `controllers/pets.js` file 
-// 1.7.4 to handle all routes that begin with `localhost:3000/pets`
+// 1.7.4 This tells our app to look at the `controllers/beauties.js` file 
+// 1.7.4 to handle all routes that begin with `localhost:3000/beauties`
 app.use('/beauties', beautiesCtrl)  // this is middleware that stores extra routes in beauties controller
+// 3.3.3 This tells our app to look at the `controllers/reviews.js` file 
+// 3.3.3 to handle all routes that begin with `localhost:3000/reviews`
+app.use('/reviews', reviewsCtrl)
+
 
 
 // 2.3.7 The "catch-all" route: Runs for any other URL that doesn't match the above routes

@@ -2,45 +2,47 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head.ejs', {title: `${pet.name} | Furever Friends`}) %>
-    <link rel="stylesheet" href="/styles/pet-details.css">
+    <%- include('../partials/head.ejs', {title: `${beauty.name} | Beauty Organizer`}) %>
+    <link rel="stylesheet" href="/styles/beauty-details.css">
 </head>
 
 <body>
     <%- include('../partials/nav.ejs') %>
 
     <div class="card">
-        <img src="<%= pet.photo %>">
+        <img src="<%= beauty.photo %>">
 
-        <h2 class="pet-name"><%= pet.name %></h2>
+        <h2 class="beauty-name"><%= beauty.name %></h2>
 
         <section>
-            <p><strong>Age:</strong> <%= pet.age %></p>
-            <p><strong>Breed:</strong> <%= pet.breed %></p>
-            <p><strong>Species:</strong> <%= pet.species %></p>
-            <p><strong>Location:</strong> <%= `${pet.city}, ${pet.state}` %></p>
+            <p><strong>Brand Name:</strong> <%= beauty.brandName %></p>
+            <p><strong>Name:</strong> <%= beauty.name %></p>
+            <p><strong>Category:</strong> <%= beauty.category %></p>
+            <p><strong>Qty:</strong> <%= beauty.qty %></p>
+            <p><strong>Size:</strong> <%= beauty.size %></p>
+            <p><strong>Rating:</strong> <%= beauty.rating %></p>
             <p><strong>Description:</strong> <%= pet.description %></p>
         </section>
 
         <section class="actions">
-            <a href="/pets/<%= pet._id %>/edit"><button class="btn">Edit</button></a>
-            <a href="/applications/new/<%= pet._id %>"><button class="btn">Adopt</button></a>
-            <form method="POST" action="/pets/<%= pet._id %>?_method=DELETE">
+            <a href="/beauties/<%= beauty._id %>/edit"><button class="btn">Edit</button></a>
+            <a href="/applications/new/<%= beauty._id %>"><button class="btn">Review</button></a>
+            <form method="POST" action="/beauties/<%= beauty._id %>?_method=DELETE">
                 <input class="btn" type="submit" value="Delete" />
             </form>
         </section>
     </div>
 
-    <% if (pet.applications.length > 0) { %>
-    <div class="applications" open>
-        <h1>Adoption Applications</h1>
+    <% if (beauty.reviews.length > 0) { %>
+    <div class="reviews" open>
+        <h1>Reviews</h1>
         <hr>
         <ul>
-            <% for (let app of pet.applications) { %>
+            <% for (let app of beauty.reviews) { %>
             <li>
-                <h2><%= app.applicantName %></h2>
-                <p> <%= app.reasonForAdoption %></p>
-                <a href="/applications/<%= app._id %>">Read More</a>
+                <h2><%= app.reviewName %></h2>
+                <p> <%= app.reasonForReview %></p>
+                <a href="/reviews/<%= app._id %>">Read More</a>
             </li>
             <% } %>
         </ul>
