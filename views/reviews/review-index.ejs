@@ -3,8 +3,8 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head.ejs', {title: 'My Applications | Furever Friends'}) %>
-    <link rel="stylesheet" href="/styles/pet-index.css">
+    <%- include('../partials/head.ejs', {title: 'My Reviews | Beauty Organizer'}) %>
+    <link rel="stylesheet" href="/styles/review-index.css">
 </head>
 
 <body>
@@ -15,13 +15,11 @@
             <ul>
                 <% for (let app of apps) { %>
                 <li>
-                    <h4><%= app.applicantName %> - <%= app.applicantEmail %></h4>
+                    <h4><%= app.reviewRating %></h4>
                     <p>
-                        Submitted on <%= app.applicationDate
-                            .toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})
-                        %>
+                        Submitted on <%= app.reviewDate.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}) %>
                     </p>
-                    <a href="/applications/<%= app._id %>">Read More</a>
+                    <a href="/reviews/<%= app._id %>">Read More</a>
                 </li>
                 <% } %>
             </ul>

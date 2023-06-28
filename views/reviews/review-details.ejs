@@ -3,47 +3,46 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head.ejs', {title: 'My Applications | Furever Friends'}) %>
-    <link rel="stylesheet" href="/styles/app-details.css">
+    <%- include('../partials/head.ejs', {title: 'My Reviews | Beauty Organizer'}) %>
+    <link rel="stylesheet" href="/styles/review-details.css">
 </head>
 
 <body>
     <%- include('../partials/nav.ejs') %>
 
     <main>
-        <section class="application">
-            <h1>Applicant: <%= app.applicantName %></h1>
+        <section class="review">
             <table>
                 <tr>
                     <th>
-                        <h2>Email:</h2>
+                        <h2>Brand Name:</h2>
                     </th>
                     <td>
-                        <h2><%= app.applicantEmail %></h2>
+                        <h2><%= app.brandName %></h2>
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        <h2>Phone:</h2>
+                        <h2>Name:</h2>
                     </th>
                     <td>
-                        <h2><%= app.applicantPhone %></h2>
+                        <h2><%= app.name %></h2>
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        <h2>Reason for adoption:</h2>
+                        <h2>Category:</h2>
                     </th>
                     <td>
-                        <h2><%= app.reasonForAdoption %></h2>
+                        <h2><%= app.category %></h2>
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        <h2>Number of pets:</h2>
+                        <h2>Description:</h2>
                     </th>
                     <td>
-                        <h2><%= app.ownedPets %></h2>
+                        <h2><%= app.reviewDescription %></h2>
                     </td>
                 </tr>
                 <tr>
@@ -51,14 +50,14 @@
                         <h2>Date submitted:</h2>
                     </th>
                     <td>
-                        <h2><%= app.applicationDate.toLocaleDateString() %></h2>
+                        <h2><%= app.reviewDate.toLocaleDateString() %></h2>
                     </td>
                 </tr>
             </table>
 
             <div class="actions">
-                <form method="POST" action="/applications/<%= app._id %>?_method=DELETE">
-                    <input class="btn" type="submit" value="Delete" />
+                <form method="POST" action="/reviews/<%= app._id %>?_method=DELETE">
+                    <input class="btn btn2" type="submit" value="Delete" />
                 </form>
             </div>
         </section>

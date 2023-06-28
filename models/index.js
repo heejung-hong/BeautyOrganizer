@@ -10,7 +10,7 @@ db.on('connected', function () {
     console.log(`Connected to MongoDB ${db.name} at ${db.host}:${db.port}`);
 });
 
-// 1.4.3 this will access the Pet model inside models/index.js
+// 1.4.3 this will access the Beauty model inside models/index.js
 module.exports = {
     Beauty: require('./beauty'),
     // 1.6.2 export models and seed data to server.js

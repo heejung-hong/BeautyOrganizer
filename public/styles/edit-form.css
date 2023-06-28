@@ -5,12 +5,13 @@
 }
 
 form {
-    width: 60%;
+    width: 40%;
     min-width: 300px;
     margin: 0 auto 2rem auto;
 }
 
 label {
+    font-family: 'Nunito Sans', sans-serif;;
     display: inline-block;
     margin-bottom: 5px;
     font-weight: bold;
@@ -35,13 +36,14 @@ textarea {
 }
 
 input[type="submit"] {
-    background-color: #333;
+    background-color: lightskyblue;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-family: 'Lobster', cursive;
 }
 
 input[type="submit"]:hover {

@@ -9,45 +9,30 @@
 <body>
     <%- include('../partials/nav.ejs') %>
 
-    <div class="card">
+    <div class="card cardPic">
         <img src="<%= beauty.photo %>">
+    </div>
 
+    <div class="card">
         <h2 class="beauty-name"><%= beauty.name %></h2>
 
         <section>
             <p><strong>Brand Name:</strong> <%= beauty.brandName %></p>
-            <p><strong>Name:</strong> <%= beauty.name %></p>
             <p><strong>Category:</strong> <%= beauty.category %></p>
             <p><strong>Qty:</strong> <%= beauty.qty %></p>
             <p><strong>Size:</strong> <%= beauty.size %></p>
             <p><strong>Rating:</strong> <%= beauty.rating %></p>
-            <p><strong>Description:</strong> <%= pet.description %></p>
+            <p><strong>Description:</strong> <%= beauty.description %></p>
         </section>
 
         <section class="actions">
             <a href="/beauties/<%= beauty._id %>/edit"><button class="btn">Edit</button></a>
-            <a href="/applications/new/<%= beauty._id %>"><button class="btn">Review</button></a>
+            <a href="/reviews/new/<%= beauty._id %>"><button class="btn">Review</button></a>
             <form method="POST" action="/beauties/<%= beauty._id %>?_method=DELETE">
                 <input class="btn" type="submit" value="Delete" />
             </form>
         </section>
     </div>
-
-    <% if (beauty.reviews.length > 0) { %>
-    <div class="reviews" open>
-        <h1>Reviews</h1>
-        <hr>
-        <ul>
-            <% for (let app of beauty.reviews) { %>
-            <li>
-                <h2><%= app.reviewName %></h2>
-                <p> <%= app.reasonForReview %></p>
-                <a href="/reviews/<%= app._id %>">Read More</a>
-            </li>
-            <% } %>
-        </ul>
-    </div>
-    <% } %>
 
     <%- include('../partials/footer.ejs') %>
 </body>

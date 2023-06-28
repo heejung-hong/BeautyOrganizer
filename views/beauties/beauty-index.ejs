@@ -9,13 +9,9 @@
 <body>
     <%- include('../partials/nav.ejs') %>
 
-    <section class="hero">
-        <h2>Available Pets</h2>
-        <h3>Will you be the forever home and provide love to one of these special animals?</h3>
-    </section>
-
     <main>
         <section class="listings">
+            <h2>In My Stash</h2>
             <ul>
                 <% for (let beauty of beauties) { %>
                 <li>
@@ -23,7 +19,9 @@
                         <img src="<%= beauty.photo %>">
                         <figcaption>
                             <h4><%= beauty.name %></h4>
-                            <p><%= beauty.brandName %>, Qty <%= beauty.qty %>, <%= beauty.rating %> Stars</p>
+                            <p><%= beauty.brandName %></p>
+                            <p>Qty <%= beauty.qty %></p>
+                            <p><%= beauty.rating %> Stars</p>
                             <a href="/beauties/<%= beauty._id %>">Details</a>
                         </figcaption>
                     </figure>

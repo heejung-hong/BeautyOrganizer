@@ -3,7 +3,7 @@
 
 <head>
     <%- include('../partials/head.ejs', {title: `Edit ${beauty.name} | Beauty Organizer`}) %>
-    <link rel="stylesheet" href="/styles/beauty-form.css">
+    <link rel="stylesheet" href="/styles/edit-form.css">
 </head>
 
 <body>
@@ -11,7 +11,6 @@
 
     <section class="hero">
         <h2>Edit a Listing</h2>
-        <h4><i>Helping pets find their happily ever after, one adoption at a time</i></h4>
     </section>
 
     <form method="POST" action="/beauty/<%= beauty._id %>?_method=PUT">

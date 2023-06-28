@@ -1,7 +1,7 @@
 // 1.6.1 create seed data
 const beauties = [
     {
-        photo: "Cetaphil",
+        photo: "https://www.cetaphil.com/dw/image/v2/BGGN_PRD/on/demandware.static/-/Sites-galderma-us-m-catalog/default/dw73122065/Moisturizing%20Cream%2016oz/CETAPHIL_Moisturizing_Cream_16oz.png?sw=900&sh=900&sm=fit&q=85",
         brandName: "Cetaphil",
         name: "Cream",
         category: "Cream",
@@ -11,7 +11,7 @@ const beauties = [
         description: "For Dry to Normal, Sensitive Skin moisturing cream for body and face"
     },
     {
-        photo: "Cetaphil",
+        photo: "https://www.cetaphil.com/dw/image/v2/BGGN_PRD/on/demandware.static/-/Sites-galderma-us-m-catalog/default/dw968ed157/Rich%20Hydrating%20Night%20Cream%20Face%20Moisturizer%201.7%20Oz/302993889021_1.png?sw=900&sh=900&sm=fit&q=85",
         brandName: "Cetaphil",
         name: "Rich Hydrating Cream",
         category: "Cream",
@@ -21,7 +21,7 @@ const beauties = [
         description: "For Dry to Normal, Sensitive Skin"
     },
     {
-        photo: "Biossance",
+        photo: "https://biossance.com/cdn/shop/products/6379_23_0215_PDP_LacticAcidNewName_Solider_1160x1160_d062c7e6-e47d-41ab-8105-f43038d64066_600x.jpg?v=1680205397",
         brandName: "Biossance",
         name: "Squalane Lactic Acid Resurfacing",
         category: "Serum",
@@ -31,7 +31,7 @@ const beauties = [
         description: "Gently exfoliates skin"
     },
     {
-        photo: "Biossance",
+        photo: "https://biossance.com/cdn/shop/products/RoseOil_600x.jpg?v=1683547005",
         brandName: "Biossance",
         name: "Squalane Vitamin C Rose Oil",
         category: "Oil",
@@ -41,7 +41,7 @@ const beauties = [
         description: "Calms, soothes, and locks in moisture"
     },
     {
-        photo: "Biossance",
+        photo: "https://biossance.com/cdn/shop/products/22_0201_WB_PDP_P4645_LipBalm_Allure2021Seal_5aa8baf4-b383-4d8f-9f8e-37421bc8a0f5_600x.jpg?v=1679417430",
         brandName: "Biossance",
         name: "Squalane Rose Vegan Lip Balm",
         category: "Balm",
@@ -51,7 +51,7 @@ const beauties = [
         description: "Delivers extra moisture for soft healthy lips"
     },
     {
-        photo: "Shiseido",
+        photo: "https://shiseido.ipscdn.net/sa2/dw/image/v2/BBSK_PRD/on/demandware.static/-/Sites-itemmaster_shiseido/default/dwcb8d59de/images/2022/July/Top25/0730852155794_2.jpg?sw=800&sh=800&sm=fit",
         brandName: "Shiseido",
         name: "Wrinkle Smoothing Eye Cream",
         category: "Cream",
@@ -61,7 +61,7 @@ const beauties = [
         description: "Anti-aging eye cream"
     },
     {
-        photo: "Sekkisei",
+        photo: "https://images.costco-static.com/ImageDelivery/imageService?profileId=12026540&itemId=1589585-847&recipeName=680",
         brandName: "Sekkisei",
         name: "Kose Lotion Toner",
         category: "Toner",

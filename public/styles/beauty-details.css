@@ -1,5 +1,5 @@
 .card,
-.applications {
+.reviews {
     max-width: 800px;
     margin: 2rem auto;
     border: 1px solid #ccc;
@@ -7,17 +7,22 @@
 }
 
 .card {
+    
     text-align: center;
     padding: 20px;
 }
 
+.cardPic {
+    max-width: 500px;
+}
+
 img {
-    width: 60%;
-    min-width: 300px;
+    width: 40%;
+    min-width: 100px;
     height: 30%;
     min-height: 150px;
     object-fit: cover;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .beauty-name {
@@ -28,9 +33,11 @@ img {
 section {
     text-align: left;
     margin: 0 20%;
+    margin-bottom: 50px;
 }
 
 p {
+    font-family: 'Frank Ruhl Libre', serif;
     font-size: 18px;
     margin-bottom: 10px;
 }
@@ -45,6 +52,7 @@ strong {
 
 /* Style Action Buttons */
 .actions {
+    
     margin-top: 1rem;
     display: flex;
     align-items: center;
@@ -55,8 +63,8 @@ strong {
     color: #fff;
 }
 
-/* Adoption applications */
-.applications {
+/* My Reviews */
+.reviews {
     padding: 30px;
     height: fit-content;
     max-height: 50vh;
@@ -64,7 +72,7 @@ strong {
     width: 100%;
 }
 
-.applications h1 {
+.reviews h1 {
     font-size: 32px;
     font-weight: bold;
 }
@@ -73,11 +81,11 @@ hr {
     margin-bottom: 1rem;
 }
 
-.applications ul {
+.reviews ul {
     list-style: none;
 }
 
-.applications li {
+.reviews li {
     background-color: #ccc;
     margin-bottom: 1rem;
     border-radius: 5px;
@@ -85,7 +93,7 @@ hr {
     position: relative;
 }
 
-.applications a {
+.reviews a {
     position: absolute;
     top: 1.6rem;
     right: 1rem;
