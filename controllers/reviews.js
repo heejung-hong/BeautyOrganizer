@@ -5,20 +5,17 @@ NOTE: Remember that all routes on this page are prefixed with `localhost:3000/re
 */
 
 
-/* Require modules
---------------------------------------------------------------- */
+// Require modules
 const express = require('express')
 // Router allows us to handle routing outisde of server.js
 const router = express.Router()
 
 
-/* Require the db connection, and models
---------------------------------------------------------------- */
+// Require the db connection, and models
 const db = require('../models')
 
 
-/* Routes
---------------------------------------------------------------- */
+// Routes
 // Index Route (All Reviews): 
 // GET localhost:3000/reviews/
 router.get('/', (req, res) => {
@@ -27,17 +24,23 @@ router.get('/', (req, res) => {
 		    // format query results to appear in one array, 
 		    // rather than an array of objects containing arrays 
 	    	const flatList = []
-	    	for (let beauty of beauties) {
-	        	flatList.push(...beauty.reviews)
-	    	}
-	    	res.json(flatList)
-		}
-	)
+	    	for (let beauty of beauties) { flatList.push(...beauty.reviews) }
+	    	// res.json(flatList)
+            res.render('reviews/review-index', { apps: flatList })
+		})
 });
 
-// New Route: GET localhost:3000/reviews/new
+// New Route: GET localhost:3000/reviews/new/:beautyId
 router.get('/new/:beautyId', (req, res) => {
-    res.send('You\'ve reached the new route. You\'ll be making a new review for beauty item ' + req.params.beautyId)
+    // res.send('You\'ve reached the new route. You\'ll be making a new review for beauty item ' + req.params.beautyId)
+    db.Beauty.findById(req.params.beautyId)
+        .then(beauty => {
+            if (beauty) {
+                res.render('reviews/new-form.ejs', { beauty: beauty })
+            } else {
+                res.render('404')
+            }
+        })
 })
 
 // Create Route: POST localhost:3000/reviews/
@@ -47,7 +50,8 @@ router.post('/create/:beautyId', (req, res) => {
         { $push: { reviews: req.body } },
         { new: true }
     )
-        .then(review => res.json(review))
+        // .then(review => res.json(review))
+        .then(() => res.redirect('/beauties/' + req.params.beautyId))
 });
 
 // Show Route: GET localhost:3000/reviews/:id
@@ -59,36 +63,43 @@ router.get('/:id', (req, res) => {
         .then(beauty => {
 	        // format query results to appear in one object, 
 	        // rather than an object containing an array of one object
-            res.json(beauty.reviews[0])
+            // res.json(beauty.reviews[0])
+            res.render('reviews/review-details', { app: beauty.reviews[0] })
         })
 });
 
 // Edit Route: GET localhost:3000/reviews/:id/edit
 router.get('/:id/edit', (req, res) => {
     db.Beauty.findOne(
-        { 'reviews._id': req.params.id },
-        { 'reviews.$': true, _id: false }
+        { 'reviews._id': req.params.id }
     )
         .then(beauty => {
 	        // format query results to appear in one object, 
 	        // rather than an object containing an array of one object
-            res.json('You\'ll be editing beauty ' + reviews._id)
+            // res.json(beauty)
+            res.render('beauties/beauty-index', {
+                beauties: beauties
+            })
         })
 });
 
 
 // Update Route: GET localhost:3000/reviews/:id
-router.get('/:id', (req, res) => {
-    db.Beauty.findByIdAndUpdate(
+router.put('/:id', (req, res) => {
+    db.Beauty.findOneAndUpdate(
         { 'reviews._id': req.params.id },
-        { 'reviews.$': true, _id: false }
+        { $set: { 'reviews.$': req.body }},
+        { new: true }
     )
         .then(beauty => {
+            console.log(beauty)
 	        // format query results to appear in one object, 
 	        // rather than an object containing an array of one object
-            res.json(beauty.reviews)
+            // res.json(beauty.reviews)
+            res.render('reviews/review-details', { app: beauty.reviews[0] })
         })
 });
+
 
 
 // Destroy Route: DELETE localhost:3000/reviews/:id
@@ -98,7 +109,8 @@ router.delete('/:id', (req, res) => {
         { $pull: { reviews: { _id: req.params.id } } },
         { new: true }
     )
-        .then(beauty => res.json(beauty))
+        // .then(beauty => res.json(beauty))
+        .then(beauty => res.redirect('/beauties/' + beauty._id))
 });
 
 
