@@ -5,6 +5,8 @@ const path = require('path');
 const express = require('express');
 const livereload = require("livereload");
 const connectLiveReload = require("connect-livereload");
+// 2.4 Rest Views - in terminal run npm i method-override before post code below.
+const methodOverride = require('method-override');
 
 // 1.5.1 Require the db connection, models, and seed data
 const db = require('./models');
@@ -30,15 +32,18 @@ liveReloadServer.server.once("connection", () => {
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// 1.5.1 Middleware (app.use)
-app.use(express.static('public'))
-app.use(connectLiveReload());
-
 // 2.2.1 Body parser: used for POST/PUT/PATCH routes: 
 // 2.2.1 this will take incoming strings from the body that are URL encoded and parse them 
 // 2.2.1 into an object that can be accessed in the request parameter as a property called body (req.body).
 app.use(express.urlencoded({ extended: true }));
 
+// 1.5.1 Middleware (app.use)
+app.use(express.static('public'))
+app.use(connectLiveReload());
+
+// 2.4 Rest Views Method Override 
+// Allows us to interpret POST requests from the browser as another request type: DELETE, PUT, etc.
+app.use(methodOverride('_method'));
 
 // 1.5.1 Mount routes looks into beauties controller
 app.get('/', function (req, res) {

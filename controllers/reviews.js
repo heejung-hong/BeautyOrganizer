@@ -67,7 +67,7 @@ router.get('/:id', (req, res) => {
             res.render('reviews/review-details', { app: beauty.reviews[0] })
         })
 });
-
+/*
 // Edit Route: GET localhost:3000/reviews/:id/edit
 router.get('/:id/edit', (req, res) => {
     db.Beauty.findOne(
@@ -99,7 +99,7 @@ router.put('/:id', (req, res) => {
             res.render('reviews/review-details', { app: beauty.reviews[0] })
         })
 });
-
+*/
 
 
 // Destroy Route: DELETE localhost:3000/reviews/:id
