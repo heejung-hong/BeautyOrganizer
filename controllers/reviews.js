@@ -58,13 +58,14 @@ router.post('/create/:beautyId', (req, res) => {
 router.get('/:id', (req, res) => {
     db.Beauty.findOne(
         { 'reviews._id': req.params.id },
-        { 'reviews.$': true, _id: false }
+        // { 'reviews.$': true, _id: false }
     )
         .then(beauty => {
+            console.log(beauty.reviews[0])
 	        // format query results to appear in one object, 
 	        // rather than an object containing an array of one object
             // res.json(beauty.reviews[0])
-            res.render('reviews/review-details', { app: beauty.reviews[0] })
+            res.render('reviews/review-details', { app: beauty.reviews[0], beauty: beauty })
         })
 });
 /*
