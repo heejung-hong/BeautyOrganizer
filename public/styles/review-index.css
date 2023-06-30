@@ -20,6 +20,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    
 }
 
 .listings li {
@@ -29,7 +30,7 @@ main {
     border-radius: 4px;
     position: relative;
     text-align: center;
-    min-width: 350px;
+    min-width: 600px;
 }
 
 .listings li img {

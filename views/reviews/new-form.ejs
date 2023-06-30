@@ -12,7 +12,7 @@
 
     <section class="hero">
         <h2>Reviews</h2>
-        <h4><i>Review your Beauty Item! <a href="/beauties/<%= beauty._id %>"><%= beauty.name %></a></i></h4>
+        <h4><i>Review your Beauty Item! <a class="h4" href="/beauties/<%= beauty._id %>"> <%= beauty.name %></a></i></h4>
     </section>
 
     <form action="/reviews/create/<%= beauty._id %>" method="POST">

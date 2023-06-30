@@ -1,19 +1,20 @@
-.card,
-.reviews {
-    max-width: 800px;
-    margin: 2rem auto;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 5px #ccc;
-}
 
-.card {
-    
-    text-align: center;
-    padding: 20px;
+
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .cardPic {
-    max-width: 500px;
+    max-width: 400px;
+    margin: 2rem auto;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px #ccc;
+    padding: 20px;
+    text-align: center;
 }
 
 img {
@@ -25,8 +26,23 @@ img {
     margin-bottom: 20px;
 }
 
+.card {
+    max-width: 500px;
+    margin: 2rem auto;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
 .beauty-name {
     font-size: 32px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
@@ -36,23 +52,16 @@ section {
     margin-bottom: 50px;
 }
 
-p {
-    font-family: 'Frank Ruhl Libre', serif;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
 strong {
     font-weight: bold;
 }
 
-.featured {
+/* .featured {
     background-color: #ffd700;
-}
+} */
 
 /* Style Action Buttons */
 .actions {
-    
     margin-top: 1rem;
     display: flex;
     align-items: center;
@@ -61,10 +70,11 @@ strong {
 
 .btn a {
     color: #fff;
+    font-family: 'Lobster', cursive;
 }
 
 /* My Reviews */
-.reviews {
+/* .reviews {
     padding: 30px;
     height: fit-content;
     max-height: 50vh;
@@ -79,9 +89,9 @@ strong {
 
 hr {
     margin-bottom: 1rem;
-}
+} */
 
-.reviews ul {
+/* .reviews ul {
     list-style: none;
 }
 
@@ -103,4 +113,4 @@ hr {
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
-}
+} */

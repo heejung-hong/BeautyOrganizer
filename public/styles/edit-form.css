@@ -1,7 +1,6 @@
 .hero {
     height: 20vh;
     min-height: 175px;
-    margin-bottom: 2rem;
 }
 
 form {
@@ -44,6 +43,7 @@ input[type="submit"] {
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: 'Lobster', cursive;
+    font-size: 22px;
 }
 
 input[type="submit"]:hover {
