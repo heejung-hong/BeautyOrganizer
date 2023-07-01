@@ -20,13 +20,13 @@ const reviewsCtrl = require('./controllers/reviews')
 const app = express();
 
 // 1.5.1 Configure the app to refresh the browser when nodemon restarts
-const liveReloadServer = livereload.createServer();
-liveReloadServer.server.once("connection", () => {
-    // 1.5.1 wait for nodemon to fully restart before refreshing the page
-    setTimeout(() => {
-        liveReloadServer.refresh("/");
-    }, 100);
-});
+// const liveReloadServer = livereload.createServer();
+// liveReloadServer.server.once("connection", () => {
+//     // 1.5.1 wait for nodemon to fully restart before refreshing the page
+//     setTimeout(() => {
+//         liveReloadServer.refresh("/");
+//     }, 100);
+// });
 
 // 1.5.1 Configure the app (app.set)
 app.set('view engine', 'ejs');
@@ -35,15 +35,37 @@ app.set('views', path.join(__dirname, 'views'));
 // 2.2.1 Body parser: used for POST/PUT/PATCH routes: 
 // 2.2.1 this will take incoming strings from the body that are URL encoded and parse them 
 // 2.2.1 into an object that can be accessed in the request parameter as a property called body (req.body).
-app.use(express.urlencoded({ extended: true }));
+// app.use(express.urlencoded({ extended: true }));
 
 // 1.5.1 Middleware (app.use)
+// app.use(express.static('public'))
+// app.use(connectLiveReload());
+
+// Heroku.2 Detect if running in a dev environment
+if (process.env.ON_HEROKU === 'false') {
+    // Configure the app to refresh the browser when nodemon restarts
+    const liveReloadServer = livereload.createServer();
+    liveReloadServer.server.once("connection", () => {
+        // wait for nodemon to fully restart before refreshing the page
+        setTimeout(() => {
+        liveReloadServer.refresh("/");
+        }, 100);
+    });
+    app.use(connectLiveReload());
+}
+
+// Heroku.2 Body parser: used for POST/PUT/PATCH routes: 
+// Heroku.2 this will take incoming strings from the body that are URL encoded and parse them 
+// Heroku.2 into an object that can be accessed in the request parameter as a property called body (req.body).
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'))
-app.use(connectLiveReload());
+// Heroku Allows us to interpret POST requests from the browser as another request type: DELETE, PUT, etc.
+app.use(methodOverride('_method'));
+
 
 // 2.4 Rest Views Method Override 
 // Allows us to interpret POST requests from the browser as another request type: DELETE, PUT, etc.
-app.use(methodOverride('_method'));
+// app.use(methodOverride('_method'));
 
 // 1.5.1 Mount routes looks into beauties controller
 app.get('/', function (req, res) {

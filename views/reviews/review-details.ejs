@@ -39,7 +39,7 @@
                 </tr>
                 <tr>
                     <th>
-                        <h2>Description:</h2>
+                        <h2>My Review:</h2>
                     </th>
                     <td>
                         <h2><%= app.reviewDescription %></h2>
@@ -54,7 +54,7 @@
                     </td>
                 </tr>
             </table>
-
+            <br>
             <div class="actions">
                 <form method="POST" action="/reviews/<%= app._id %>?_method=DELETE">
                     <input class="btn btn2" type="submit" value="Delete" />

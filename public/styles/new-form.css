@@ -48,6 +48,7 @@ input[type="submit"] {
     transition: all 0.3s ease;
     font-family: 'Lobster', cursive;
     font-size: 22px;
+    
 }
 
 input[type="submit"]:hover {

@@ -16,14 +16,22 @@
                 <% for (let beauty of beauties) { %>
                 <li>
                     <figure>
-                        <img src="<%= beauty.photo %>">
-                        <figcaption>
-                            <h4><%= beauty.name %></h4>
-                            <p><%= beauty.brandName %></p>
-                            <p>Qty <%= beauty.qty %></p>
-                            <p><%= beauty.size %></p>
-                            <a href="/beauties/<%= beauty._id %>">Details</a>
-                        </figcaption>
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="<%= beauty.photo %>">
+                                </div>
+                                <div class="flip-card-back">
+                                    <figcaption>
+                                        <h4><%= beauty.name %></h4>
+                                        <p><%= beauty.brandName %></p>
+                                        <p>Qty <%= beauty.qty %></p>
+                                        <p><%= beauty.size %></p>
+                                        <a href="/beauties/<%= beauty._id %>">Details</a>
+                                    </figcaption>
+                                </div>
+                            </div>
+                        </div>
                     </figure>
                 </li>
                 <% } %>

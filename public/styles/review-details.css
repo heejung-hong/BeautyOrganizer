@@ -1,9 +1,9 @@
 /* 3.5.1 Adding Styles - Static Assets */
 .review {
-    margin: 2rem auto;
-    height: 70vh;
-    min-height: 300px;
-    width: 60vw;
+    margin: 3rem auto;
+    height: 50vh;
+    min-height: 500px;
+    width: 50vw;
     min-width: 300px;
     border: 2px solid lightpink;
     padding: 40px;
@@ -11,9 +11,7 @@
     overflow-y: scroll;
 }
 
-/* table * {
-    border: 2px solid red;
-} */
+
 
 .review h1 {
     text-align: center;
@@ -23,7 +21,7 @@
 table {
     background-color: #f7f7f7;
     width: 100%;
-    height: 70%;
+    height: 60%;
     border-radius: 1rem;
 }
 
@@ -33,21 +31,20 @@ th {
 }
 
 td {
-    padding-left: 1rem;
+    padding-left: 2rem;
 }
 
 td h2 {
     font-family: 'Frank Ruhl Libre', serif;
-    font-weight: 100;
+    font-weight: 75;
 }
 
 /* Style Action Buttons */
 .actions {
-    
     margin-top: 1rem;
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: center;
 }
 
 .btn2 {
