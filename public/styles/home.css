@@ -24,3 +24,13 @@
 
 }
 
+
+.leafOne {
+    z-index: -1;
+    margin: 0;
+}
+
+.leafTwo {
+    z-index: -1;
+    text-align: right;
+}

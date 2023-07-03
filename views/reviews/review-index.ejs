@@ -15,6 +15,7 @@
             <ul>
                 <% for (let app of apps) { %>
                 <li>
+                    <p><%= beauty.name %></p>
                     <h4><%= app.reviewDescription %></h4>
                     <p>
                         Submitted on <%= app.reviewDate.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}) %>

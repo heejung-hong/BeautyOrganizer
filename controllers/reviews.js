@@ -24,12 +24,25 @@ router.get('/', (req, res) => {
 		    // format query results to appear in one array, 
 		    // rather than an array of objects containing arrays 
 	    	const flatList = []
+	    	for (let beauty of beauties) { flatList.push(...beauty.reviews), (beauty.beauty) }
+            // console.log(flatList)
+	    	// res.json(flatList)
+            res.render('reviews/review-index', { apps: flatList, beauty: beauties })
+		})
+});
+/*
+router.get('/', (req, res) => {
+	db.Beauty.find({}, { reviews: true, _id: false })
+        .then(beauties => {
+		    // format query results to appear in one array, 
+		    // rather than an array of objects containing arrays 
+	    	const flatList = []
 	    	for (let beauty of beauties) { flatList.push(...beauty.reviews) }
 	    	// res.json(flatList)
             res.render('reviews/review-index', { apps: flatList })
 		})
 });
-
+*/
 // New Route: GET localhost:3000/reviews/new/:beautyId
 router.get('/new/:beautyId', (req, res) => {
     // res.send('You\'ve reached the new route. You\'ll be making a new review for beauty item ' + req.params.beautyId)

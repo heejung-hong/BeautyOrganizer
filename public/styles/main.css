@@ -68,11 +68,11 @@ nav ul {
 }
 
 nav li:not(:last-child) {
-    margin-right: 1rem;
+    margin-right: 2rem;
 }
 
 nav a {
-    font-size: 1.2rem;
+    font-size: 2rem;
 }
 
 /* Hero section styles */
@@ -134,3 +134,4 @@ footer * {
 footer ul {
     justify-content: center;
 }
+
