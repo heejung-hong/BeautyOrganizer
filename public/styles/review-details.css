@@ -3,7 +3,7 @@
     margin: 3rem auto;
     height: 50vh;
     min-height: 500px;
-    width: 50vw;
+    width: 70vw;
     min-width: 300px;
     border: 2px solid lightpink;
     padding: 40px;
@@ -25,18 +25,24 @@ table {
     border-radius: 1rem;
 }
 
-th {
-    width: 45%;
+th {    
+    width: 35%;
     text-align: right;
+}
+
+th h2 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 18px;
 }
 
 td {
     padding-left: 2rem;
+    width: 65%;
 }
 
 td h2 {
-    font-family: 'Frank Ruhl Libre', serif;
-    font-weight: 75;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
 }
 
 /* Style Action Buttons */

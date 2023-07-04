@@ -47,12 +47,44 @@ input[type="submit"] {
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: 'Lobster', cursive;
-    font-size: 22px;
-    
+    font-size: 22px;    
 }
 
 input[type="submit"]:hover {
     background-color: #fff;
     color: #333;
     border: 1px solid #333;
+}
+
+/* https://www.w3schools.com/css/css_icons.asp */
+.spa, .leaf, .flower, .heart, .orange {
+    position: absolute;
+    overflow-x: auto;
+    z-index: -1;
+    color: darkgrey;
+}
+
+.spa {
+    margin: 30vh 85vw 0 15vw;
+    font-size: 48px;
+}
+
+.leaf {
+    margin: 55vh 15vw 0 85vw;
+    font-size: 48px;
+}
+
+.flower {
+    margin: 60vh 20vw 0 80vw;
+    font-size: 48px;
+}
+
+.heart {
+    margin: 80vh 95vw 0 10vw;
+    font-size: 48px;
+}
+
+.orange {
+    margin: 110vh 15vw 0 85vw;
+    font-size: 48px;
 }

@@ -11,15 +11,18 @@
     <%- include('../partials/nav.ejs') %>
 
     <main>
+        
         <section class="listings">
             <ul>
                 <% for (let app of apps) { %>
                 <li>
-                    <p><%= app.name %></p>
-                    <h4><%= app.reviews[0].reviewDescription %></h4>
-                    <p>
-                        Submitted on <%= app.reviews[0].reviewDate.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}) %>
-                    </p>
+                    <div>
+                        <p><%= app.name %></p>
+                        <h4><%= app.reviews[0].reviewDescription %></h4>
+                        <p>
+                            Submitted on <%= app.reviews[0].reviewDate.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}) %>
+                        </p>
+                    </div>
                     <a href="/reviews/<%= app.reviews[0]._id %>">Read More</a>
                 </li>
                 <% } %>
