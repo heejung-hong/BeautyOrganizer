@@ -22,7 +22,9 @@ body {
     font-size: 16px;
     line-height: 1.5;
     color: dimgrey;
-    background-color: #f7f7f7;
+    /* background-color: #f7f7f7; */
+    background-image: url("../assets/leaf.png") repeat fixed right;
+    
     min-height: 100vh;
     display: flex;
     flex-direction: column;

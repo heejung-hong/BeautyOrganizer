@@ -19,13 +19,19 @@ const db = require('../models')
 // Index Route (All Reviews): 
 // GET localhost:3000/reviews/
 router.get('/', (req, res) => {
-	db.Beauty.find({}, { reviews: true, _id: false })
+	db.Beauty.find({})
+    // .populate({path: "reviews", populate: [ {path: "reviewDescription"}, {path: "reviewDate"}]})
         .then(beauties => {
+            console.log(beauties)
 		    // format query results to appear in one array, 
 		    // rather than an array of objects containing arrays 
 	    	const flatList = []
-	    	for (let beauty of beauties) { flatList.push(...beauty.reviews), (beauty.beauty) }
-            // console.log(flatList)
+	    	for (let beauty of beauties) { 
+                // console.log(beauty)
+                if (beauty.reviews.length > 0) {
+                    flatList.push(beauty)
+                }
+            }
 	    	// res.json(flatList)
             res.render('reviews/review-index', { apps: flatList, beauty: beauties })
 		})

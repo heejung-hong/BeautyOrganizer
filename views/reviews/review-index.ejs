@@ -15,12 +15,12 @@
             <ul>
                 <% for (let app of apps) { %>
                 <li>
-                    <p><%= beauty.name %></p>
-                    <h4><%= app.reviewDescription %></h4>
+                    <p><%= app.name %></p>
+                    <h4><%= app.reviews[0].reviewDescription %></h4>
                     <p>
-                        Submitted on <%= app.reviewDate.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}) %>
+                        Submitted on <%= app.reviews[0].reviewDate.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}) %>
                     </p>
-                    <a href="/reviews/<%= app._id %>">Read More</a>
+                    <a href="/reviews/<%= app.reviews[0]._id %>">Read More</a>
                 </li>
                 <% } %>
             </ul>
