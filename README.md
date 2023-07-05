@@ -1,4 +1,5 @@
 1. Embedded screenshot of the app
+    1. https://docs.google.com/presentation/d/1NkxEeasRGWhsFbRn43VkD6YCna9dZCmueUZxUy-YvQs/edit?usp=sharing
 
 2. List of Technologies used
     1. Node.js
@@ -26,7 +27,7 @@
 
 
 5. Wireframes
-    1. 
+    1. https://docs.google.com/presentation/d/1PpUOaHUQAsDVSierTSFz0N26psJwOSIPB0T2EX7WSqw/edit?usp=sharing
 
 
 6. Descriptions of Unsolved problems or major hurdles
@@ -39,3 +40,4 @@
         https://github.com/heejung1180/Project-2.git
 
     2. Heroku link
+        https://beauty-organizer-078af2d08df4.herokuapp.com/
