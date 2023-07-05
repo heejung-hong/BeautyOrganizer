@@ -53,34 +53,34 @@ input[type="submit"]:hover {
 }
 
 /* https://www.w3schools.com/css/css_icons.asp */
-.spa, .leaf, .flower, .heart, .orange {
+.spa, .star, .leaf, .flower, .heart, .moon, .orange {
     position: absolute;
     overflow-x: auto;
     z-index: -1;
     color: darkgrey;
+    font-size: 48px;
 }
 
 .spa {
     margin: 30vh 85vw 0 15vw;
-    font-size: 48px;
 }
 
 .leaf {
     margin: 55vh 15vw 0 85vw;
-    font-size: 48px;
 }
 
 .flower {
     margin: 60vh 20vw 0 80vw;
-    font-size: 48px;
 }
 
 .heart {
     margin: 80vh 95vw 0 10vw;
-    font-size: 48px;
+}
+
+.moon {
+    margin: 85vh 90vw 0 15vw;
 }
 
 .orange {
     margin: 110vh 15vw 0 85vw;
-    font-size: 48px;
 }

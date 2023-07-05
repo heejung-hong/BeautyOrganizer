@@ -30,9 +30,10 @@ main {
     border-radius: 4px;
     position: relative;
     text-align: left;
-    width: 70vw;
+    width: 60vw;
     min-width: 300px;
     overflow-y: scroll;
+    background-color: #f7f7f7;
 }
 
 .listings div {
